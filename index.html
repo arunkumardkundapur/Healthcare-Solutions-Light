@@ -1,0 +1,2648 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DocPat Healthcare Solutions | Medical Billing & Revenue Cycle Management</title>
+  <meta name="description"
+    content="Expert Medical Billing & Revenue Cycle Management for US Doctors, Clinics & Hospitals." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@200;300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0
+    }
+
+    :root {
+      --ink: #ffffff;
+      --deep: #f4f7ff;
+      --panel: #eef2ff;
+      --card: #ffffff;
+      --border: rgba(26, 52, 120, 0.1);
+      --border2: rgba(26, 52, 120, 0.15);
+      --navy: #1a3478;
+      --navy2: #0f2260;
+      --blue: #2563eb;
+      --teal: #0891b2;
+      --accent: #1a3478;
+      --gold: #b45309;
+      --gold2: #d97706;
+      --text: #1e293b;
+      --muted: #64748b;
+      --white: #ffffff;
+      --shadow: 0 4px 24px rgba(26, 52, 120, 0.09);
+      --shadow-lg: 0 16px 60px rgba(26, 52, 120, 0.14);
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: var(--ink);
+      color: var(--text);
+      overflow-x: hidden;
+      cursor: pointer
+    }
+
+    /* #cursor {
+      position: fixed;
+      width: 10px;
+      height: 10px;
+      background: var(--navy);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform .15s;
+      transform: translate(-50%, -50%)
+    }
+
+    #cursor-ring {
+      position: fixed;
+      width: 36px;
+      height: 36px;
+      border: 1.5px solid rgba(26, 52, 120, 0.4);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9998;
+      transform: translate(-50%, -50%);
+      transition: width .2s, height .2s
+    }
+
+    #cursor-ring.hovered {
+      width: 56px;
+      height: 56px
+    } */
+
+    #particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      pointer-events: none
+    }
+
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 500;
+      padding: 0 5%;
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      transition: background .4s, box-shadow .4s;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border)
+    }
+
+    nav.scrolled {
+      background: rgba(255, 255, 255, 0.98);
+      box-shadow: 0 2px 20px rgba(26, 52, 120, 0.1)
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      text-decoration: none
+    }
+
+    .logo-emblem svg {
+      width: 52px;
+      height: 52px
+    }
+
+    .logo-words {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1
+    }
+
+    .logo-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy);
+      letter-spacing: .03em
+    }
+
+    .logo-name span {
+      color: var(--blue)
+    }
+
+    .logo-sub {
+      font-size: .6rem;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 2px
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2.2rem
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: .82rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+      transition: color .25s;
+      position: relative
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 1.5px;
+      background: var(--navy);
+      transition: width .3s
+    }
+
+    .nav-links a:hover {
+      color: var(--navy)
+    }
+
+    .nav-links a:hover::after {
+      width: 100%
+    }
+
+    .nav-btn {
+      border: 1.5px solid var(--navy) !important;
+      color: var(--navy) !important;
+      padding: .5rem 1.5rem;
+      border-radius: 4px !important;
+      font-weight: 600 !important
+    }
+
+    .nav-btn:hover {
+      background: var(--navy) !important;
+      color: #fff !important
+    }
+
+    .nav-btn::after {
+      display: none !important
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      background: none;
+      border: none;
+      padding: 8px
+    }
+
+    .hamburger span {
+      display: block;
+      width: 26px;
+      height: 1.5px;
+      background: var(--navy);
+      transition: .3s
+    }
+
+    .mobile-menu {
+      position: fixed;
+      top: 76px;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.99);
+      backdrop-filter: blur(20px);
+      z-index: 499;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .4s
+    }
+
+    .mobile-menu.open {
+      opacity: 1;
+      pointer-events: all
+    }
+
+    .mobile-menu a {
+      font-family: 'Playfair Display', serif;
+      font-size: 2rem;
+      color: var(--navy);
+      text-decoration: none;
+      transition: color .2s
+    }
+
+    .mobile-menu a:hover {
+      color: var(--blue)
+    }
+
+    #hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      padding: 120px 5% 80px;
+      overflow: hidden;
+      background: linear-gradient(135deg, #f0f5ff 0%, #ffffff 55%, #eff6ff 100%)
+    }
+
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1
+    }
+
+    .hero-bg-grid {
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(rgba(26, 52, 120, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(26, 52, 120, 0.05) 1px, transparent 1px);
+      background-size: 80px 80px;
+      opacity: 1
+    }
+
+    .hero-glow-1 {
+      position: absolute;
+      top: -200px;
+      right: -100px;
+      width: 700px;
+      height: 700px;
+      background: radial-gradient(circle, rgba(37, 99, 235, .08) 0%, transparent 65%);
+      border-radius: 50%
+    }
+
+    .hero-glow-2 {
+      position: absolute;
+      bottom: -200px;
+      left: -100px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(8, 145, 178, .06) 0%, transparent 65%);
+      border-radius: 50%
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1300px;
+      margin: 0 auto;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid rgba(37, 99, 235, .3);
+      background: rgba(37, 99, 235, .06);
+      padding: 8px 18px;
+      border-radius: 100px;
+      margin-bottom: 2rem;
+      animation: fadeDown .8s ease .2s both
+    }
+
+    .hero-badge-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--teal);
+      border-radius: 50%;
+      animation: pulse2 2s infinite
+    }
+
+    .hero-badge-text {
+      font-size: .72rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--blue)
+    }
+
+    @keyframes pulse2 {
+
+      0%,
+      100% {
+        box-shadow: 0 0 0 0 rgba(8, 145, 178, .5)
+      }
+
+      50% {
+        box-shadow: 0 0 0 8px rgba(8, 145, 178, 0)
+      }
+    }
+
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.8rem, 5.5vw, 5rem);
+      font-weight: 900;
+      line-height: 1.05;
+      color: var(--navy);
+      margin-bottom: 1.8rem
+    }
+
+    .hero h1 .line {
+      display: block;
+      overflow: hidden
+    }
+
+    .hero h1 .line span {
+      display: block;
+      animation: slideUp .85s cubic-bezier(.16, 1, .3, 1) both
+    }
+
+    .l1 span {
+      animation-delay: .3s
+    }
+
+    .l2 span {
+      animation-delay: .48s
+    }
+
+    .l3 span {
+      animation-delay: .64s
+    }
+
+    .hero h1 em {
+      font-style: italic;
+      color: var(--blue)
+    }
+
+    .hero-desc {
+      font-size: 1.02rem;
+      color: var(--muted);
+      line-height: 1.85;
+      max-width: 500px;
+      margin-bottom: 2.5rem;
+      animation: fadeUp .9s ease .7s both;
+      font-weight: 400
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1.2rem;
+      flex-wrap: wrap;
+      animation: fadeUp .9s ease .85s both
+    }
+
+    .btn-gold {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--navy);
+      color: #fff;
+      padding: .9rem 2.2rem;
+      font-size: .85rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all .25s;
+      position: relative;
+      overflow: hidden
+    }
+
+    .btn-gold::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--blue);
+      transform: translateX(-100%);
+      transition: transform .3s
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 40px rgba(26, 52, 120, .25)
+    }
+
+    .btn-gold:hover::before {
+      transform: translateX(0)
+    }
+
+    .btn-gold span {
+      position: relative;
+      z-index: 1
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: transparent;
+      color: var(--navy);
+      padding: .9rem 2.2rem;
+      font-size: .85rem;
+      font-weight: 600;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1.5px solid rgba(26, 52, 120, .25);
+      border-radius: 4px;
+      transition: all .25s
+    }
+
+    .btn-ghost:hover {
+      border-color: var(--navy);
+      background: rgba(26, 52, 120, .05)
+    }
+
+    .hero-metrics {
+      display: flex;
+      gap: 2.5rem;
+      margin-top: 3rem;
+      padding-top: 2.5rem;
+      border-top: 1px solid var(--border);
+      animation: fadeUp .9s ease 1s both;
+      flex-wrap: wrap
+    }
+
+    .hero-metric .num {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.6rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1
+    }
+
+    .hero-metric .num span {
+      color: var(--blue)
+    }
+
+    .hero-metric .lbl {
+      font-size: .72rem;
+      color: var(--muted);
+      margin-top: 6px;
+      letter-spacing: .08em;
+      text-transform: uppercase
+    }
+
+    .hero-right {
+      animation: fadeLeft .9s ease .6s both;
+      position: relative
+    }
+
+    .dashboard {
+      background: #fff;
+      border: 1px solid var(--border2);
+      border-radius: 16px;
+      padding: 2rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg)
+    }
+
+    .dashboard::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--navy), var(--blue), var(--teal))
+    }
+
+    .dash-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.8rem
+    }
+
+    .dash-title {
+      font-size: .68rem;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: var(--muted)
+    }
+
+    .dash-live {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .7rem;
+      color: var(--teal);
+      font-weight: 600
+    }
+
+    .dash-live::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--teal);
+      border-radius: 50%;
+      animation: pulse2 2s infinite
+    }
+
+    .dash-big {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: .3rem
+    }
+
+    .dash-sub {
+      font-size: .82rem;
+      color: var(--teal);
+      margin-bottom: 1.8rem;
+      font-weight: 600
+    }
+
+    .dash-bars {
+      display: flex;
+      flex-direction: column;
+      gap: .9rem;
+      margin-bottom: 1.8rem
+    }
+
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 12px
+    }
+
+    .bar-label {
+      font-size: .72rem;
+      color: var(--muted);
+      width: 82px;
+      flex-shrink: 0
+    }
+
+    .bar-track {
+      flex: 1;
+      height: 6px;
+      background: rgba(26, 52, 120, .08);
+      border-radius: 3px;
+      overflow: hidden
+    }
+
+    .bar-fill {
+      height: 100%;
+      border-radius: 3px;
+      animation: barGrow 1.5s cubic-bezier(.16, 1, .3, 1) both
+    }
+
+    .bar-fill.g {
+      background: linear-gradient(90deg, var(--navy), var(--blue))
+    }
+
+    .bar-fill.t {
+      background: linear-gradient(90deg, var(--teal), #06b6d4);
+      animation-delay: .3s
+    }
+
+    .bar-fill.b {
+      background: linear-gradient(90deg, #7c3aed, #a78bfa);
+      animation-delay: .6s
+    }
+
+    .bar-pct {
+      font-size: .72rem;
+      color: var(--navy);
+      font-weight: 700;
+      width: 34px;
+      text-align: right
+    }
+
+    @keyframes barGrow {
+      from {
+        width: 0 !important
+      }
+    }
+
+    .dash-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .8rem
+    }
+
+    .dash-stat {
+      background: var(--deep);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1rem
+    }
+
+    .dash-stat-val {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--navy)
+    }
+
+    .dash-stat-lbl {
+      font-size: .68rem;
+      color: var(--muted);
+      margin-top: 4px
+    }
+
+    .dash-stat-chg {
+      font-size: .7rem;
+      color: var(--teal);
+      margin-top: 4px;
+      font-weight: 700
+    }
+
+    .float-badge {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.97);
+      border: 1px solid var(--border2);
+      border-radius: 10px;
+      padding: .75rem 1rem;
+      font-size: .78rem;
+      backdrop-filter: blur(10px);
+      white-space: nowrap;
+      z-index: 10;
+      box-shadow: var(--shadow)
+    }
+
+    .float-badge-1 {
+      top: -22px;
+      right: -22px;
+      animation: floatA 4s ease-in-out infinite
+    }
+
+    .float-badge-2 {
+      bottom: -18px;
+      left: -18px;
+      animation: floatA 4s ease-in-out infinite;
+      animation-delay: 2s
+    }
+
+    .fb-val {
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 2px;
+      font-size: .85rem
+    }
+
+    .fb-lbl {
+      color: var(--muted);
+      font-size: .68rem
+    }
+
+    @keyframes floatA {
+
+      0%,
+      100% {
+        transform: translateY(0)
+      }
+
+      50% {
+        transform: translateY(-10px)
+      }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(28px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes fadeDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    @keyframes fadeLeft {
+      from {
+        opacity: 0;
+        transform: translateX(40px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateX(0)
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(110%)
+      }
+
+      to {
+        transform: translateY(0)
+      }
+    }
+
+    .trust-strip {
+      position: relative;
+      z-index: 2;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1.2rem 0;
+      background: var(--navy);
+      overflow: hidden
+    }
+
+    .trust-track {
+      display: flex;
+      gap: 3.5rem;
+      align-items: center;
+      animation: marquee 35s linear infinite;
+      width: max-content
+    }
+
+    .trust-strip:hover .trust-track {
+      animation-play-state: paused
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.65);
+      font-size: .78rem;
+      letter-spacing: .08em;
+      white-space: nowrap;
+      flex-shrink: 0;
+      text-transform: uppercase
+    }
+
+    .trust-item svg {
+      width: 15px;
+      height: 15px;
+      color: rgba(255, 255, 255, 0.5);
+      flex-shrink: 0
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0)
+      }
+
+      to {
+        transform: translateX(-50%)
+      }
+    }
+
+    section {
+      padding: 110px 5%;
+      position: relative;
+      z-index: 2
+    }
+
+    .sec-inner {
+      max-width: 1300px;
+      margin: 0 auto
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .68rem;
+      letter-spacing: .25em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 1.2rem
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 28px;
+      height: 1.5px;
+      background: var(--blue)
+    }
+
+    .sec-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 4vw, 3.4rem);
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.15;
+      margin-bottom: 1.2rem
+    }
+
+    .sec-title em {
+      font-style: italic;
+      color: var(--blue)
+    }
+
+    .sec-sub {
+      font-size: .98rem;
+      color: var(--muted);
+      line-height: 1.85;
+      font-weight: 400;
+      max-width: 580px
+    }
+
+    .sec-header {
+      margin-bottom: 5rem
+    }
+
+    .sec-header.center {
+      text-align: center
+    }
+
+    .sec-header.center .sec-sub {
+      margin: 0 auto
+    }
+
+    #services {
+      background: var(--deep)
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: var(--shadow)
+    }
+
+    .svc-card {
+      background: #fff;
+      padding: 2.5rem 2rem;
+      transition: background .3s, transform .3s, box-shadow .3s;
+      position: relative;
+      overflow: hidden;
+      cursor: default
+    }
+
+    .svc-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--navy), var(--blue));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .4s cubic-bezier(.16, 1, .3, 1)
+    }
+
+    .svc-card:hover {
+      background: #f8faff;
+      box-shadow: inset 0 0 0 1px rgba(37, 99, 235, .1)
+    }
+
+    .svc-card:hover::after {
+      transform: scaleX(1)
+    }
+
+    .svc-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 900;
+      color: rgba(26, 52, 120, 0.18);
+      line-height: 1;
+      margin-bottom: .8rem;
+      transition: color .3s;
+      user-select: none
+    }
+
+    .svc-card:hover .svc-num {
+      color: rgba(26, 52, 120, .1)
+    }
+
+    .svc-icon {
+      font-size: 1.7rem;
+      margin-bottom: .9rem
+    }
+
+    .svc-card h3 {
+      font-size: .98rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: .65rem
+    }
+
+    .svc-card p {
+      font-size: .84rem;
+      color: var(--muted);
+      line-height: 1.75
+    }
+
+    .svc-arrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: .75rem;
+      color: var(--blue);
+      margin-top: 1.1rem;
+      opacity: 0;
+      transform: translateX(-8px);
+      transition: opacity .3s, transform .3s;
+      font-weight: 600
+    }
+
+    .svc-card:hover .svc-arrow {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    #why {
+      background: var(--deep)
+    }
+
+    .why-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 80px;
+      align-items: center
+    }
+
+    .why-panel {
+      background: var(--navy);
+      border-radius: 16px;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg)
+    }
+
+    .why-panel::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--blue), var(--teal))
+    }
+
+    .why-panel-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 2rem
+    }
+
+    .rcm-flow {
+      display: flex;
+      flex-direction: column;
+      gap: .65rem
+    }
+
+    .rcm-step {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      padding: .9rem 1.1rem;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      transition: all .3s;
+      cursor: default
+    }
+
+    .rcm-step:hover {
+      background: rgba(255, 255, 255, .08);
+      border-color: rgba(255, 255, 255, .15)
+    }
+
+    .rcm-n {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, .12);
+      border: 1px solid rgba(255, 255, 255, .2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: .72rem;
+      font-weight: 700;
+      color: #fff;
+      flex-shrink: 0
+    }
+
+    .rcm-txt {
+      font-size: .86rem;
+      color: rgba(255, 255, 255, .8)
+    }
+
+    .rcm-ico {
+      margin-left: auto;
+      font-size: .95rem;
+      opacity: .5
+    }
+
+    .why-feats {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem
+    }
+
+    .why-feat {
+      display: flex;
+      gap: 1.2rem;
+      align-items: flex-start
+    }
+
+    .wf-icon {
+      width: 48px;
+      height: 48px;
+      background: rgba(37, 99, 235, .08);
+      border: 1.5px solid rgba(37, 99, 235, .15);
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+      transition: background .3s
+    }
+
+    .why-feat:hover .wf-icon {
+      background: rgba(37, 99, 235, .15)
+    }
+
+    .wf-body h4 {
+      font-size: .95rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: .4rem
+    }
+
+    .wf-body p {
+      font-size: .84rem;
+      color: var(--muted);
+      line-height: 1.7
+    }
+
+    #numbers {
+      background: var(--navy);
+      padding: 80px 5%;
+      position: relative;
+      z-index: 2
+    }
+
+    .numbers-grid {
+      max-width: 1300px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr)
+    }
+
+    .number-item {
+      text-align: center;
+      padding: 3rem 2rem;
+      border-right: 1px solid rgba(255, 255, 255, .1);
+      position: relative;
+      overflow: hidden
+    }
+
+    .number-item::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 2px;
+      background: var(--teal);
+      transition: width .6s
+    }
+
+    .number-item:hover::before {
+      width: 60%
+    }
+
+    .number-item:last-child {
+      border-right: none
+    }
+
+    .number-val {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 4vw, 4rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1
+    }
+
+    .number-val span {
+      color: var(--teal)
+    }
+
+    .number-lbl {
+      font-size: .72rem;
+      color: rgba(255, 255, 255, .55);
+      margin-top: .8rem;
+      letter-spacing: .12em;
+      text-transform: uppercase
+    }
+
+    #specialties {
+      background: #fff
+    }
+
+    .spec-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1rem
+    }
+
+    .spec-card {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 1.8rem 1.4rem;
+      background: var(--deep);
+      transition: all .35s;
+      position: relative;
+      overflow: hidden;
+      cursor: default
+    }
+
+    .spec-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(37, 99, 235, .05), transparent);
+      opacity: 0;
+      transition: opacity .35s
+    }
+
+    .spec-card:hover {
+      border-color: rgba(37, 99, 235, .35);
+      transform: translateY(-4px);
+      box-shadow: 0 20px 50px rgba(26, 52, 120, .12)
+    }
+
+    .spec-card:hover::before {
+      opacity: 1
+    }
+
+    .spec-emoji {
+      font-size: 2rem;
+      margin-bottom: .9rem;
+      display: block
+    }
+
+    .spec-name {
+      font-size: .9rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: .3rem
+    }
+
+    .spec-tag {
+      font-size: .7rem;
+      color: var(--muted);
+      letter-spacing: .06em
+    }
+
+    #process {
+      background: var(--deep)
+    }
+
+    .process-line {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      position: relative
+    }
+
+    .process-line::before {
+      content: '';
+      position: absolute;
+      top: 36px;
+      left: 10%;
+      right: 10%;
+      height: 1.5px;
+      background: linear-gradient(90deg, transparent, var(--navy), var(--blue), var(--teal), var(--blue), var(--navy), transparent)
+    }
+
+    .proc-step {
+      text-align: center;
+      position: relative;
+      z-index: 1
+    }
+
+    .proc-circle {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: #fff;
+      border: 2px solid var(--border2);
+      margin: 0 auto 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      transition: all .3s;
+      position: relative;
+      box-shadow: var(--shadow)
+    }
+
+    .proc-step:hover .proc-circle {
+      background: var(--deep);
+      border-color: var(--blue);
+      box-shadow: 0 0 30px rgba(37, 99, 235, .18)
+    }
+
+    .proc-num {
+      position: absolute;
+      top: -8px;
+      right: -8px;
+      width: 22px;
+      height: 22px;
+      background: var(--navy);
+      color: #fff;
+      border-radius: 50%;
+      font-size: .62rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center
+    }
+
+    .proc-step h4 {
+      font-size: .86rem;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: .4rem
+    }
+
+    .proc-step p {
+      font-size: .76rem;
+      color: var(--muted);
+      line-height: 1.5
+    }
+
+    #testimonials {
+      background: var(--deep)
+    }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem
+    }
+
+    .testi-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 2.2rem;
+      position: relative;
+      overflow: hidden;
+      transition: transform .3s, box-shadow .3s, border-color .3s;
+      box-shadow: var(--shadow)
+    }
+
+    .testi-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--navy), var(--blue));
+      opacity: 0;
+      transition: opacity .3s
+    }
+
+    .testi-card:hover {
+      transform: translateY(-5px);
+      box-shadow: var(--shadow-lg);
+      border-color: rgba(37, 99, 235, .2)
+    }
+
+    .testi-card:hover::before {
+      opacity: 1
+    }
+
+    .testi-quote {
+      font-size: 3rem;
+      color: var(--blue);
+      opacity: .15;
+      line-height: 1;
+      margin-bottom: .4rem;
+      font-family: 'Playfair Display', serif
+    }
+
+    .testi-stars {
+      color: #f59e0b;
+      font-size: .9rem;
+      letter-spacing: 3px;
+      margin-bottom: 1.4rem
+    }
+
+    .testi-text {
+      font-size: .88rem;
+      color: var(--muted);
+      line-height: 1.8;
+      margin-bottom: 1.8rem;
+      font-style: italic
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: .9rem
+    }
+
+    .testi-av {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--navy), var(--blue));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #fff;
+      font-size: .88rem;
+      flex-shrink: 0
+    }
+
+    .testi-name {
+      font-size: .88rem;
+      font-weight: 600;
+      color: var(--navy)
+    }
+
+    .testi-role {
+      font-size: .74rem;
+      color: var(--muted)
+    }
+
+    #contact {
+      background: var(--deep)
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 80px;
+      align-items: start
+    }
+
+    .cl-eyebrow {
+      margin-bottom: 1.2rem
+    }
+
+    .cl-h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 1.2rem
+    }
+
+    .cl-h3 em {
+      font-style: italic;
+      color: var(--blue)
+    }
+
+    .cl-p {
+      font-size: .9rem;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 2.5rem
+    }
+
+    .contact-details {
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem
+    }
+
+    .c-detail {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem
+    }
+
+    .c-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(37, 99, 235, .08);
+      border: 1.5px solid rgba(37, 99, 235, .15);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      flex-shrink: 0
+    }
+
+    .c-lbl {
+      font-size: .65rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      margin-bottom: 3px
+    }
+
+    .c-val {
+      font-size: .88rem;
+      color: var(--navy);
+      font-weight: 600
+    }
+
+    .contact-form-wrap {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 3rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg)
+    }
+
+    .contact-form-wrap::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--navy), var(--blue), var(--teal))
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2rem
+    }
+
+    .fg {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem
+    }
+
+    .fg.full {
+      grid-column: 1/-1
+    }
+
+    .fg label {
+      font-size: .68rem;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700
+    }
+
+    .fg input,
+    .fg select,
+    .fg textarea {
+      background: var(--deep);
+      border: 1.5px solid var(--border2);
+      border-radius: 6px;
+      padding: .82rem 1.1rem;
+      font-size: .88rem;
+      color: var(--text);
+      font-family: 'Outfit', sans-serif;
+      outline: none;
+      transition: border-color .25s, background .25s;
+      width: 100%
+    }
+
+    .fg input:focus,
+    .fg select:focus,
+    .fg textarea:focus {
+      border-color: var(--blue);
+      background: #fff;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, .08)
+    }
+
+    .fg input::placeholder,
+    .fg textarea::placeholder {
+      color: var(--muted)
+    }
+
+    .fg select {
+      cursor: pointer;
+      -webkit-appearance: none;
+      appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%231a3478' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 1rem center
+    }
+
+    .fg select option {
+      background: #fff;
+      color: var(--text)
+    }
+
+    .fg textarea {
+      resize: vertical;
+      min-height: 110px
+    }
+
+    .form-submit {
+      width: 100%;
+      margin-top: .5rem;
+      padding: 1.1rem;
+      background: var(--navy);
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: .85rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: all .25s;
+      font-family: 'Outfit', sans-serif;
+      position: relative;
+      overflow: hidden
+    }
+
+    .form-submit::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--blue);
+      transform: translateX(-100%);
+      transition: transform .3s
+    }
+
+    .form-submit:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 30px rgba(26, 52, 120, .25)
+    }
+
+    .form-submit:hover::before {
+      transform: translateX(0)
+    }
+
+    .form-submit .fs-inner {
+      position: relative;
+      z-index: 1
+    }
+
+    .form-note {
+      text-align: center;
+      font-size: .73rem;
+      color: var(--muted);
+      margin-top: .8rem
+    }
+
+    .fmsg {
+      padding: .9rem 1rem;
+      border-radius: 6px;
+      font-size: .85rem;
+      font-weight: 500;
+      margin-bottom: 1rem;
+      display: none
+    }
+
+    .fmsg.ok {
+      background: rgba(8, 145, 178, .08);
+      border: 1px solid rgba(8, 145, 178, .25);
+      color: var(--teal)
+    }
+
+    .fmsg.err {
+      background: rgba(239, 68, 68, .08);
+      border: 1px solid rgba(239, 68, 68, .25);
+      color: #dc2626
+    }
+
+    footer {
+      background: var(--navy);
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      padding: 70px 5% 30px;
+      position: relative;
+      z-index: 2
+    }
+
+    .footer-inner {
+      max-width: 1300px;
+      margin: 0 auto
+    }
+
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 3rem;
+      margin-bottom: 4rem
+    }
+
+    .fb-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: .8rem
+    }
+
+    .fb-name span {
+      color: rgba(255, 255, 255, .6)
+    }
+
+    .fb-desc {
+      font-size: .84rem;
+      color: rgba(255, 255, 255, .5);
+      line-height: 1.75;
+      max-width: 280px
+    }
+
+    .fb-slogan {
+      margin-top: 1.2rem;
+      font-style: italic;
+      font-family: 'Playfair Display', serif;
+      font-size: .88rem;
+      color: rgba(255, 255, 255, .35)
+    }
+
+    .footer-col h5 {
+      font-size: .65rem;
+      letter-spacing: .22em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, .35);
+      margin-bottom: 1.4rem
+    }
+
+    .footer-col a {
+      display: block;
+      color: rgba(255, 255, 255, .5);
+      text-decoration: none;
+      font-size: .83rem;
+      margin-bottom: .65rem;
+      transition: color .2s
+    }
+
+    .footer-col a:hover {
+      color: #fff
+    }
+
+    .footer-bottom {
+      border-top: 1px solid rgba(255, 255, 255, .08);
+      padding-top: 1.8rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap
+    }
+
+    .footer-bottom p {
+      font-size: .76rem;
+      color: rgba(255, 255, 255, .35)
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(36px);
+      transition: opacity .7s ease, transform .7s ease
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0)
+    }
+
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-36px);
+      transition: opacity .7s ease, transform .7s ease
+    }
+
+    .reveal-left.visible {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(36px);
+      transition: opacity .7s ease, transform .7s ease
+    }
+
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translateX(0)
+    }
+
+    @media(max-width:1100px) {
+      .hero-inner {
+        grid-template-columns: 1fr
+      }
+
+      .hero-right {
+        max-width: 480px;
+        display: none
+      }
+
+      .why-layout {
+        grid-template-columns: 1fr
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .numbers-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .number-item:nth-child(2) {
+        border-right: none
+      }
+
+      .number-item:nth-child(1),
+      .number-item:nth-child(2) {
+        border-bottom: 1px solid var(--border)
+      }
+
+      .spec-grid {
+        grid-template-columns: repeat(3, 1fr)
+      }
+
+      .testi-grid {
+        grid-template-columns: 1fr 1fr
+      }
+
+      .contact-wrap {
+        grid-template-columns: 1fr
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem
+      }
+    }
+
+    @media(max-width:768px) {
+      .nav-links {
+        display: none
+      }
+
+      .hamburger {
+        display: flex
+      }
+
+      #cursor,
+      #cursor-ring {
+        display: none
+      }
+
+      body {
+        cursor: auto
+      }
+
+      .form-submit {
+        cursor: pointer
+      }
+
+      section {
+        padding: 80px 5%
+      }
+
+      .hero-metrics {
+        gap: 1.5rem
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: flex-start
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr
+      }
+
+      .spec-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .process-line {
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem
+      }
+
+      .process-line::before {
+        display: none
+      }
+
+      .testi-grid {
+        grid-template-columns: 1fr
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr
+      }
+
+      .footer-top {
+        grid-template-columns: 1fr
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        text-align: center
+      }
+
+      .contact-form-wrap {
+        padding: 1.8rem
+      }
+
+      .numbers-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .number-item:nth-child(2) {
+        border-right: none
+      }
+
+      .number-item:nth-child(3) {
+        border-bottom: none
+      }
+    }
+
+    @media(max-width:480px) {
+      .spec-grid {
+        grid-template-columns: repeat(2, 1fr)
+      }
+
+      .process-line {
+        grid-template-columns: 1fr
+      }
+
+      .numbers-grid {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="particles"></canvas>
+  <div id="cursor"></div>
+  <div id="cursor-ring"></div>
+
+  <nav id="navbar">
+    <a href="#" class="nav-logo">
+      <div class="logo-emblem">
+        <svg viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg">
+          <text x="1" y="29" font-family="Playfair Display,serif" font-size="24" font-weight="900"
+            fill="#1a3478">D</text>
+          <text x="17" y="29" font-family="Playfair Display,serif" font-size="24" font-weight="300"
+            fill="#2563eb">oc</text>
+          <line x1="23" y1="7" x2="30" y2="44" stroke="rgba(37,99,235,0.3)" stroke-width="1" />
+          <text x="1" y="48" font-family="Playfair Display,serif" font-size="24" font-weight="900"
+            fill="#2563eb">P</text>
+          <text x="17" y="48" font-family="Playfair Display,serif" font-size="24" font-weight="300"
+            fill="#1a3478">at</text>
+        </svg>
+      </div>
+      <div class="logo-words">
+        <span class="logo-name">Doc<span>Pat</span></span>
+        <span class="logo-sub">Healthcare Solutions</span>
+      </div>
+    </a>
+    <div class="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why">Why Us</a>
+      <a href="#specialties">Specialties</a>
+      <a href="#process">Process</a>
+      <a href="#testimonials">Clients</a>
+      <a href="#contact" class="nav-btn">Free Consult</a>
+    </div>
+    <button class="hamburger" onclick="toggleNav()" aria-label="Menu">
+      <span id="h1"></span><span id="h2"></span><span id="h3"></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu" id="mobileNav">
+    <a href="#services" onclick="toggleNav()">Services</a>
+    <a href="#why" onclick="toggleNav()">Why Us</a>
+    <a href="#specialties" onclick="toggleNav()">Specialties</a>
+    <a href="#process" onclick="toggleNav()">Process</a>
+    <a href="#testimonials" onclick="toggleNav()">Clients</a>
+    <a href="#contact" onclick="toggleNav()">Free Consultation</a>
+  </div>
+
+  <section id="hero">
+    <div class="hero-bg">
+      <div class="hero-bg-grid"></div>
+      <div class="hero-glow-1"></div>
+      <div class="hero-glow-2"></div>
+    </div>
+    <div class="hero-inner">
+      <div class="hero-content">
+        <div class="hero-badge"><span class="hero-badge-dot"></span><span class="hero-badge-text">US Revenue Cycle
+            Management Experts</span></div>
+        <h1>
+          <span class="line l1"><span>Billing <em>right</em>,</span></span>
+          <span class="line l2"><span>Doctors bright,</span></span>
+          <span class="line l3"><span>Patients <em>delighted.</em></span></span>
+        </h1>
+        <p class="hero-desc">DocPat Healthcare Solutions delivers end-to-end Revenue Cycle Management for US physicians,
+          clinics, and hospitals — recovering every dollar, eliminating denials, and letting you focus on care.</p>
+        <div class="hero-actions">
+          <a href="#contact" class="btn-gold"><span>Schedule Free Consultation</span><span>→</span></a>
+          <a href="#services" class="btn-ghost">Explore Services</a>
+        </div>
+        <div class="hero-metrics">
+          <div class="hero-metric">
+            <div class="num">98<span>%</span></div>
+            <div class="lbl">Clean Claim Rate</div>
+          </div>
+          <div class="hero-metric">
+            <div class="num">30<span>%</span></div>
+            <div class="lbl">Revenue Increase</div>
+          </div>
+          <div class="hero-metric">
+            <div class="num">24<span>h</span></div>
+            <div class="lbl">Submission TAT</div>
+          </div>
+          <div class="hero-metric">
+            <div class="num">40<span>%</span></div>
+            <div class="lbl">Denial Reduction</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="float-badge float-badge-1">
+          <div class="fb-val">+$247,800</div>
+          <div class="fb-lbl">Monthly Recovery</div>
+        </div>
+        <div class="dashboard">
+          <div class="dash-header"><span class="dash-title">RCM Performance Dashboard</span><span
+              class="dash-live">Live</span></div>
+          <div class="dash-big">$1.24M</div>
+          <div class="dash-sub">↑ 32% Revenue Collected This Quarter</div>
+          <div class="dash-bars">
+            <div class="bar-row"><span class="bar-label">Clean Claims</span>
+              <div class="bar-track">
+                <div class="bar-fill g" style="width:98%"></div>
+              </div><span class="bar-pct">98%</span>
+            </div>
+            <div class="bar-row"><span class="bar-label">Collection</span>
+              <div class="bar-track">
+                <div class="bar-fill t" style="width:94%"></div>
+              </div><span class="bar-pct">94%</span>
+            </div>
+            <div class="bar-row"><span class="bar-label">Denial Rate</span>
+              <div class="bar-track">
+                <div class="bar-fill b" style="width:4%"></div>
+              </div><span class="bar-pct">4%</span>
+            </div>
+          </div>
+          <div class="dash-grid">
+            <div class="dash-stat">
+              <div class="dash-stat-val">28</div>
+              <div class="dash-stat-lbl">AR Days</div>
+              <div class="dash-stat-chg">↓ from 62 days</div>
+            </div>
+            <div class="dash-stat">
+              <div class="dash-stat-val">24h</div>
+              <div class="dash-stat-lbl">Submission TAT</div>
+              <div class="dash-stat-chg">↑ same-day entry</div>
+            </div>
+          </div>
+        </div>
+        <div class="float-badge float-badge-2">
+          <div class="fb-val">HIPAA ✓ Compliant</div>
+          <div class="fb-lbl">All data secured & encrypted</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="trust-strip">
+    <div class="trust-track">
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        </svg>HIPAA Compliant</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>All US Payers Accepted</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 6v6l4 2" />
+        </svg>24-Hour Claim Submission</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="3" width="20" height="14" rx="2" />
+          <polyline points="8 21 12 17 16 21" />
+        </svg>ICD-10 & CPT Certified</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+        </svg>Dedicated Account Manager</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="12" y1="1" x2="12" y2="23" />
+          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+        </svg>No Setup Fees</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+          <polyline points="22 4 12 14.01 9 11.01" />
+        </svg>98% First-Pass Rate</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+        </svg>HIPAA Compliant</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>All US Payers Accepted</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M12 6v6l4 2" />
+        </svg>24-Hour Claim Submission</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="2" y="3" width="20" height="14" rx="2" />
+          <polyline points="8 21 12 17 16 21" />
+        </svg>ICD-10 & CPT Certified</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+          <circle cx="9" cy="7" r="4" />
+        </svg>Dedicated Account Manager</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="12" y1="1" x2="12" y2="23" />
+          <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+        </svg>No Setup Fees</div>
+      <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+          <polyline points="22 4 12 14.01 9 11.01" />
+        </svg>98% First-Pass Rate</div>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="sec-inner">
+      <div class="sec-header center reveal">
+        <div class="eyebrow">What We Offer</div>
+        <h2 class="sec-title">Complete Revenue Cycle Management <em>End to End</em></h2>
+        <p class="sec-sub">Every step of the billing lifecycle handled with precision, speed, and expertise by certified
+          professionals.</p>
+      </div>
+      <div class="services-grid reveal">
+        <div class="svc-card">
+          <div class="svc-num">01</div>
+          <div class="svc-icon">📋</div>
+          <h3>Patient Registration & Eligibility</h3>
+          <p>Real-time insurance eligibility verification and demographic entry to prevent claim rejections at the
+            source.</p>
+          <!--  -->
+        </div>
+        <div class="svc-card">
+          <div class="svc-num">02</div>
+          <div class="svc-icon">🏷️</div>
+          <h3>Medical Coding (ICD-10 / CPT)</h3>
+          <p>Certified coders across all specialties ensuring accurate ICD-10, CPT and HCPCS codes for maximum
+            reimbursement.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-num">03</div>
+          <div class="svc-icon">📤</div>
+          <h3>Claim Submission & Tracking</h3>
+          <p>Electronic submission to all major US payers within 24 hours with real-time status tracking and scrubbing.
+          </p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-num">04</div>
+          <div class="svc-icon">🔄</div>
+          <h3>Denial Management & Appeals</h3>
+          <p>Aggressive denial analysis, root-cause resolution, and timely appeals to recover every dollar you're owed.
+          </p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-num">05</div>
+          <div class="svc-icon">💰</div>
+          <h3>Accounts Receivable Follow-up</h3>
+          <p>Proactive follow-up on outstanding claims and patient balances to keep AR days low and cash flow strong.
+          </p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-num">06</div>
+          <div class="svc-icon">📊</div>
+          <h3>Reporting & Analytics</h3>
+          <p>Transparent monthly dashboards covering collections, denial rates, payer mix, and performance KPIs.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-num">07</div>
+          <div class="svc-icon">💵</div>
+          <h3>Patient Billing & Statements</h3>
+          <p>Clear HIPAA-compliant patient statements improving satisfaction and driving consistent patient-side
+            collections.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-num">08</div>
+          <div class="svc-icon">✅</div>
+          <h3>Prior Authorization Support</h3>
+          <p>Timely prior-auth requests and follow-ups to eliminate delays and ensure procedure approvals before
+            service.</p>
+        </div>
+        <div class="svc-card">
+          <div class="svc-num">09</div>
+          <div class="svc-icon">🔍</div>
+          <h3>Credentialing & Enrollment</h3>
+          <p>Provider credentialing and payer enrollment to get your providers in-network faster and billing smoothly.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="numbers">
+    <div class="numbers-grid">
+      <div class="number-item reveal">
+        <div class="number-val"><span class="count-up" data-target="98">0</span><span>%</span></div>
+        <div class="number-lbl">Clean Claim Rate</div>
+      </div>
+      <div class="number-item reveal">
+        <div class="number-val"><span class="count-up" data-target="30">0</span><span>%</span></div>
+        <div class="number-lbl">Average Revenue Increase</div>
+      </div>
+      <div class="number-item reveal">
+        <div class="number-val"><span class="count-up" data-target="40">0</span><span>%</span></div>
+        <div class="number-lbl">Denial Rate Reduction</div>
+      </div>
+      <div class="number-item reveal">
+        <div class="number-val"><span class="count-up" data-target="28">0</span></div>
+        <div class="number-lbl">Average AR Days</div>
+      </div>
+    </div>
+  </div>
+
+  <section id="why">
+    <div class="sec-inner">
+      <div class="why-layout">
+        <div class="reveal-left">
+          <div class="why-panel">
+            <div class="why-panel-title">Our Full RCM Cycle</div>
+            <div class="rcm-flow">
+              <div class="rcm-step">
+                <div class="rcm-n">1</div>
+                <div class="rcm-txt">Patient Registration & Eligibility Check</div>
+                <div class="rcm-ico">📋</div>
+              </div>
+              <div class="rcm-step">
+                <div class="rcm-n">2</div>
+                <div class="rcm-txt">Charge Capture & Medical Coding</div>
+                <div class="rcm-ico">🏷️</div>
+              </div>
+              <div class="rcm-step">
+                <div class="rcm-n">3</div>
+                <div class="rcm-txt">Claim Scrubbing & Submission</div>
+                <div class="rcm-ico">📤</div>
+              </div>
+              <div class="rcm-step">
+                <div class="rcm-n">4</div>
+                <div class="rcm-txt">Payment Posting & ERA Processing</div>
+                <div class="rcm-ico">💳</div>
+              </div>
+              <div class="rcm-step">
+                <div class="rcm-n">5</div>
+                <div class="rcm-txt">Denial Management & Appeals</div>
+                <div class="rcm-ico">🔄</div>
+              </div>
+              <div class="rcm-step">
+                <div class="rcm-n">6</div>
+                <div class="rcm-txt">AR Follow-up & Collections</div>
+                <div class="rcm-ico">💰</div>
+              </div>
+              <div class="rcm-step">
+                <div class="rcm-n">7</div>
+                <div class="rcm-txt">Reporting, Analytics & Optimization</div>
+                <div class="rcm-ico">📊</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <div class="eyebrow">Why DocPat</div>
+          <h2 class="sec-title">Your Revenue Deserves <em>Expert Hands</em></h2>
+          <p class="sec-sub" style="margin-bottom:2.8rem">We're not just a billing company — we're your financial
+            partner, committed to optimizing every dollar you earn for every patient you serve.</p>
+          <div class="why-feats">
+            <div class="why-feat">
+              <div class="wf-icon">🎯</div>
+              <div class="wf-body">
+                <h4>Specialty-Focused Expertise</h4>
+                <p>Our coders specialize in your specific field — from cardiology to orthopedics — ensuring precise,
+                  maximum-value coding every time.</p>
+              </div>
+            </div>
+            <div class="why-feat">
+              <div class="wf-icon">💡</div>
+              <div class="wf-body">
+                <h4>Transparent, No-Surprise Pricing</h4>
+                <p>Simple percentage-based fees with zero setup costs or hidden charges. You grow, we grow — our success
+                  is tied to yours.</p>
+              </div>
+            </div>
+            <div class="why-feat">
+              <div class="wf-icon">⚙️</div>
+              <div class="wf-body">
+                <h4>Seamless EHR Integration</h4>
+                <p>We work inside your existing system — Epic, Kareo, DrChrono, Athena, AdvancedMD and more. Zero
+                  workflow disruption.</p>
+              </div>
+            </div>
+            <div class="why-feat">
+              <div class="wf-icon">🛡️</div>
+              <div class="wf-body">
+                <h4>HIPAA-Compliant & Fully Secure</h4>
+                <p>End-to-end encrypted, HIPAA-compliant operations with signed BAAs — protecting your practice and
+                  patients at every step.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="specialties">
+    <div class="sec-inner">
+      <div class="sec-header center reveal">
+        <div class="eyebrow">We Cover All Specialties</div>
+        <h2 class="sec-title">Billing Expertise Across <em>Every Specialty</em></h2>
+        <p class="sec-sub">From primary care to complex surgical specialties, our certified coders are trained in your
+          domain.</p>
+      </div>
+      <div class="spec-grid reveal">
+        <div class="spec-card"><span class="spec-emoji">🫀</span>
+          <div class="spec-name">Cardiology</div>
+          <div class="spec-tag">ICD-10 · CPT · HCPCS</div>
+        </div>
+        <div class="spec-card"><span class="spec-emoji">🦴</span>
+          <div class="spec-name">Orthopedics</div>
+          <div class="spec-tag">Surgical & Non-Surgical</div>
+        </div>
+        <div class="spec-card"><span class="spec-emoji">🧠</span>
+          <div class="spec-name">Neurology</div>
+          <div class="spec-tag">Complex Coding Certified</div>
+        </div>
+        <div class="spec-card"><span class="spec-emoji">🏥</span>
+          <div class="spec-name">Internal Medicine</div>
+          <div class="spec-tag">E&M Coding Experts</div>
+        </div>
+        <div class="spec-card"><span class="spec-emoji">👁️</span>
+          <div class="spec-name">Ophthalmology</div>
+          <div class="spec-tag">Surgical & Clinical</div>
+        </div>
+        <div class="spec-card"><span class="spec-emoji">🩺</span>
+          <div class="spec-name">Primary Care</div>
+          <div class="spec-tag">High-Volume Billing</div>
+        </div>
+        <div class="spec-card"><span class="spec-emoji">👶</span>
+          <div class="spec-name">Pediatrics</div>
+          <div class="spec-tag">Well-Visit & Preventive</div>
+        </div>
+        <div class="spec-card"><span class="spec-emoji">🧬</span>
+          <div class="spec-name">Oncology</div>
+          <div class="spec-tag">Chemo & Infusion Billing</div>
+        </div>
+        <div class="spec-card"><span class="spec-emoji">🩻</span>
+          <div class="spec-name">Radiology</div>
+          <div class="spec-tag">Technical & Professional</div>
+        </div>
+        <div class="spec-card"><span class="spec-emoji">🏃</span>
+          <div class="spec-name">Physical Therapy</div>
+          <div class="spec-tag">Outcomes-Based Coding</div>
+        </div>
+        <div class="spec-card"><span class="spec-emoji">🔬</span>
+          <div class="spec-name">Pathology / Lab</div>
+          <div class="spec-tag">High-Accuracy Coding</div>
+        </div>
+        <div class="spec-card"><span class="spec-emoji">🦷</span>
+          <div class="spec-name">Oral Surgery</div>
+          <div class="spec-tag">Dental-Medical Crossover</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="process">
+    <div class="sec-inner">
+      <div class="sec-header center reveal">
+        <div class="eyebrow">Getting Started</div>
+        <h2 class="sec-title">Live in <em>Days,</em> Not Months</h2>
+        <p class="sec-sub">Streamlined onboarding gets most practices fully operational within 3–5 business days — no
+          disruption, no downtime.</p>
+      </div>
+      <div class="process-line reveal">
+        <div class="proc-step">
+          <div class="proc-circle">📞<div class="proc-num">1</div>
+          </div>
+          <h4>Free Consultation</h4>
+          <p>We assess your practice and identify revenue gaps</p>
+        </div>
+        <div class="proc-step">
+          <div class="proc-circle">📝<div class="proc-num">2</div>
+          </div>
+          <h4>Onboarding</h4>
+          <p>Sign agreement, share access, setup integrations</p>
+        </div>
+        <div class="proc-step">
+          <div class="proc-circle">⚙️<div class="proc-num">3</div>
+          </div>
+          <h4>Configuration</h4>
+          <p>Align workflows with your team and EHR system</p>
+        </div>
+        <div class="proc-step">
+          <div class="proc-circle">🚀<div class="proc-num">4</div>
+          </div>
+          <h4>Go Live</h4>
+          <p>First claims submitted within 24 hours of go-live</p>
+        </div>
+        <div class="proc-step">
+          <div class="proc-circle">📈<div class="proc-num">5</div>
+          </div>
+          <h4>Optimize</h4>
+          <p>Monthly reviews to continuously grow your revenue</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="testimonials">
+    <div class="sec-inner">
+      <div class="sec-header center reveal">
+        <div class="eyebrow">Client Stories</div>
+        <h2 class="sec-title">Trusted by Providers <em>Across the US</em></h2>
+      </div>
+      <div class="testi-grid reveal">
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">DocPat transformed our billing department completely. Our AR days dropped from 58 to 26
+            within 3 months and our collection rate jumped significantly. They fight for every dollar and the results
+            speak for themselves.</p>
+          <div class="testi-author">
+            <div class="testi-av">DR</div>
+            <div>
+              <div class="testi-name">Dr. Robert M.</div>
+              <div class="testi-role">Internal Medicine, Texas</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Switching to DocPat was the best business decision we made as a group practice. Their
+            denial management is outstanding — aggressive, professional, and their reporting transparency is incredible.
+          </p>
+          <div class="testi-author">
+            <div class="testi-av">SC</div>
+            <div>
+              <div class="testi-name">Dr. Sarah C.</div>
+              <div class="testi-role">Cardiology Group, Florida</div>
+            </div>
+          </div>
+        </div>
+        <div class="testi-card">
+          <div class="testi-quote">"</div>
+          <div class="testi-stars">★★★★★</div>
+          <p class="testi-text">Our clinic saw a 35% revenue increase in the first 6 months. Onboarding was painless,
+            they integrated directly with our Athena system, and the monthly reports give us complete financial
+            visibility.</p>
+          <div class="testi-author">
+            <div class="testi-av">AK</div>
+            <div>
+              <div class="testi-name">Dr. Anita K.</div>
+              <div class="testi-role">Multi-Specialty Clinic, Illinois</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="sec-inner">
+      <div class="contact-wrap">
+        <div class="reveal-left">
+          <div class="eyebrow cl-eyebrow">Start Today</div>
+          <h3 class="cl-h3">Let's Recover Your <em>Lost Revenue</em></h3>
+          <p class="cl-p">Schedule a free, no-obligation consultation with our RCM experts. We'll audit your current
+            billing process and identify exactly where you're leaving money on the table.</p>
+          <div class="contact-details">
+            <div class="c-detail">
+              <div class="c-icon">📧</div>
+              <div>
+                <div class="c-lbl">Email Us</div>
+                <div class="c-val">danielpatilshalom@gmail.com</div>
+              </div>
+            </div>
+            <div class="c-detail">
+              <div class="c-icon">📞</div>
+              <div>
+                <div class="c-lbl">Call / WhatsApp</div>
+                <div class="c-val">+91 88619 49532</div>
+              </div>
+            </div>
+            <div class="c-detail">
+              <div class="c-icon">📍</div>
+              <div>
+                <div class="c-lbl">Office</div>
+                <div class="c-val">Hubli, Karnataka, India</div>
+              </div>
+            </div>
+            <div class="c-detail">
+              <div class="c-icon">🕐</div>
+              <div>
+                <div class="c-lbl">Business Hours (US EST)</div>
+                <div class="c-val">Mon–Fri · 8:00 AM – 6:00 PM EST</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <div class="contact-form-wrap">
+            <div class="fmsg ok" id="msgOk">✅ Thank you! We'll reach out within 1 business day.</div>
+            <div class="fmsg err" id="msgErr">❌ Something went wrong. Please email us directly.</div>
+            <div class="form-grid">
+              <div class="fg"><label>First Name *</label><input type="text" id="fn" placeholder="John" required /></div>
+              <div class="fg"><label>Last Name *</label><input type="text" id="ln" placeholder="Smith" required /></div>
+              <div class="fg full"><label>Email Address *</label><input type="email" id="em"
+                  placeholder="doctor@yourpractice.com" required /></div>
+              <div class="fg"><label>Phone Number</label><input type="tel" id="ph" placeholder="+1 (555) 000-0000" />
+              </div>
+              <div class="fg"><label>Practice Type</label><select id="pt">
+                  <option value="">Select...</option>
+                  <option>Solo Physician</option>
+                  <option>Group Practice</option>
+                  <option>Hospital / Health System</option>
+                  <option>Urgent Care</option>
+                  <option>Specialty Clinic</option>
+                  <option>Other</option>
+                </select></div>
+              <div class="fg"><label>Specialty</label><select id="sp">
+                  <option value="">Select...</option>
+                  <option>Cardiology</option>
+                  <option>Internal Medicine</option>
+                  <option>Orthopedics</option>
+                  <option>Neurology</option>
+                  <option>Pediatrics</option>
+                  <option>Oncology</option>
+                  <option>Radiology</option>
+                  <option>Primary Care</option>
+                  <option>Physical Therapy</option>
+                  <option>Ophthalmology</option>
+                  <option>Other</option>
+                </select></div>
+              <div class="fg"><label>Monthly Claims Volume</label><select id="vol">
+                  <option value="">Select...</option>
+                  <option>Under 100</option>
+                  <option>100–500</option>
+                  <option>500–1,000</option>
+                  <option>1,000–5,000</option>
+                  <option>5,000+</option>
+                </select></div>
+              <div class="fg"><label>Current EHR / PM System</label><input type="text" id="ehr"
+                  placeholder="Epic, Kareo, Athena..." /></div>
+              <div class="fg full"><label>Billing Challenges / Message</label><textarea id="msg"
+                  placeholder="Tell us about your current billing challenges — denials, slow payments, AR issues, or switching from another company..."></textarea>
+              </div>
+            </div>
+            <button class="form-submit" onclick="submitForm()"><span class="fs-inner">Schedule My Free Consultation
+                →</span></button>
+            <p class="form-note">🔒 HIPAA compliant · Your data is secure and never shared with third parties</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div>
+          <div class="fb-name">Doc<span>Pat</span> Healthcare</div>
+          <p class="fb-desc">Expert Revenue Cycle Management for US healthcare providers. We handle the billing — so you
+            can focus on healing.</p>
+          <div class="fb-slogan">"Billing right, Doctors bright, Patients delighted."</div>
+        </div>
+        <div class="footer-col">
+          <h5>Services</h5><a href="#services">Medical Billing</a><a href="#services">Medical Coding</a><a
+            href="#services">Denial Management</a><a href="#services">AR Follow-up</a><a href="#services">Prior
+            Authorization</a><a href="#services">Credentialing</a>
+        </div>
+        <div class="footer-col">
+          <h5>Specialties</h5><a href="#specialties">Cardiology</a><a href="#specialties">Orthopedics</a><a
+            href="#specialties">Neurology</a><a href="#specialties">Internal Medicine</a><a
+            href="#specialties">Oncology</a><a href="#specialties">Radiology</a>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5><a href="#why">Why DocPat</a><a href="#process">Our Process</a><a href="#testimonials">Client
+            Stories</a><a href="#contact">Contact Us</a><a href="#contact">Free Consultation</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 DocPat Healthcare Solutions Pvt. Ltd. All rights reserved.</p>
+        <p>HIPAA Compliant · Hubli, Karnataka, India</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // CURSOR
+    const cur = document.getElementById('cursor'), ring = document.getElementById('cursor-ring');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', e => { mx = e.clientX; my = e.clientY; cur.style.left = mx + 'px'; cur.style.top = my + 'px' });
+    (function ar() { rx += (mx - rx) * .1; ry += (my - ry) * .1; ring.style.left = rx + 'px'; ring.style.top = ry + 'px'; requestAnimationFrame(ar) })();
+    document.querySelectorAll('a,button,.svc-card,.spec-card,.testi-card,.rcm-step').forEach(el => {
+      el.addEventListener('mouseenter', () => ring.classList.add('hovered'));
+      el.addEventListener('mouseleave', () => ring.classList.remove('hovered'));
+    });
+
+    // PARTICLES
+    const cv = document.getElementById('particles'), cx = cv.getContext('2d');
+    let W, H, pts = [];
+    const resize = () => { W = cv.width = window.innerWidth; H = cv.height = window.innerHeight };
+    resize(); window.addEventListener('resize', resize);
+    class Pt { constructor() { this.reset() } reset() { this.x = Math.random() * W; this.y = Math.random() * H; this.r = Math.random() * 1.5 + .3; this.vx = (Math.random() - .5) * .25; this.vy = (Math.random() - .5) * .25; this.a = Math.random() * .12 + .03; this.blue = Math.random() > .4 } draw() { cx.beginPath(); cx.arc(this.x, this.y, this.r, 0, 6.28); cx.fillStyle = this.blue ? `rgba(37,99,235,${this.a})` : `rgba(8,145,178,${this.a})`; cx.fill() } update() { this.x += this.vx; this.y += this.vy; if (this.x < 0 || this.x > W || this.y < 0 || this.y > H) this.reset() } }
+    for (let i = 0; i < 100; i++)pts.push(new Pt());
+    (function loop() { cx.clearRect(0, 0, W, H); pts.forEach(p => { p.update(); p.draw() }); requestAnimationFrame(loop) })();
+
+    // NAV
+    window.addEventListener('scroll', () => document.getElementById('navbar').classList.toggle('scrolled', scrollY > 40));
+
+    // HAMBURGER
+    let open = false;
+    function toggleNav() {
+      open = !open;
+      document.getElementById('mobileNav').classList.toggle('open', open);
+      const h1 = document.getElementById('h1'), h2 = document.getElementById('h2'), h3 = document.getElementById('h3');
+      h1.style.transform = open ? 'rotate(45deg) translate(5px,5px)' : '';
+      h2.style.opacity = open ? '0' : '';
+      h3.style.transform = open ? 'rotate(-45deg) translate(5px,-5px)' : '';
+    }
+
+    // REVEAL
+    const robs = new IntersectionObserver(es => { es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible') }) }, { threshold: .1 });
+    document.querySelectorAll('.reveal,.reveal-left,.reveal-right').forEach(el => robs.observe(el));
+
+    // COUNT UP
+    const cobs = new IntersectionObserver(es => {
+      es.forEach(e => {
+        if (e.isIntersecting) {
+          const el = e.target, tgt = +el.dataset.target; let cur = 0;
+          const t = setInterval(() => { cur = Math.min(cur + tgt / 55, tgt); el.textContent = Math.round(cur); if (cur >= tgt) clearInterval(t) }, 18);
+          cobs.unobserve(el);
+        }
+      });
+    }, { threshold: .5 });
+    document.querySelectorAll('.count-up').forEach(el => cobs.observe(el));
+
+    // FORM
+    async function submitForm() {
+      const btn = document.querySelector('.form-submit');
+      const ok = document.getElementById('msgOk'), er = document.getElementById('msgErr');
+      const fn = document.getElementById('fn').value.trim(), ln = document.getElementById('ln').value.trim(), em = document.getElementById('em').value.trim();
+      const ph = document.getElementById('ph').value.trim(), pt = document.getElementById('pt').value, sp = document.getElementById('sp').value;
+      const vol = document.getElementById('vol').value, ehr = document.getElementById('ehr').value.trim(), msg = document.getElementById('msg').value.trim();
+      if (!fn || !ln || !em) { er.textContent = '⚠️ Please fill in all required fields.'; er.style.display = 'block'; ok.style.display = 'none'; return }
+      btn.querySelector('.fs-inner').textContent = 'Sending...'; btn.disabled = true;
+      ok.style.display = 'none'; er.style.display = 'none';
+      try {
+        const r = await fetch('https://formspree.io/f/xpwzjbgp', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ name: `${fn} ${ln}`, email: em, phone: ph, practiceType: pt, specialty: sp, volume: vol, ehr, message: msg, _replyto: em, _subject: `New RCM Inquiry — ${fn} ${ln}` }) });
+        if (r.ok) { ok.style.display = 'block';['fn', 'ln', 'em', 'ph', 'ehr', 'msg'].forEach(id => document.getElementById(id).value = '');['pt', 'sp', 'vol'].forEach(id => document.getElementById(id).selectedIndex = 0) }
+        else throw 0;
+      } catch {
+        const s = encodeURIComponent(`New RCM Inquiry — ${fn} ${ln}`);
+        const b = encodeURIComponent(`Name: ${fn} ${ln}\nEmail: ${em}\nPhone: ${ph}\nPractice: ${pt}\nSpecialty: ${sp}\nVolume: ${vol}\nEHR: ${ehr}\n\n${msg}`);
+        window.location.href = `mailto:danielpatilshalom@gmail.com?subject=${s}&body=${b}`;
+        ok.textContent = '✅ Your email client opened — please send the message to complete your inquiry.'; ok.style.display = 'block';
+      }
+      btn.querySelector('.fs-inner').textContent = 'Schedule My Free Consultation →'; btn.disabled = false;
+    }
+
+    // SMOOTH SCROLL
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }) } });
+    });
+  </script>
+</body>
+
+</html>
