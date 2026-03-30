@@ -927,16 +927,13 @@
       font-family: 'Playfair Display', serif;
       font-size: 3.5rem;
       font-weight: 900;
-      color: rgba(26, 52, 120, 0.18);
+      color: rgba(26, 52, 120, 1.18);
       line-height: 1;
       margin-bottom: .8rem;
       transition: color .3s;
       user-select: none
     }
 
-    .svc-card:hover .svc-num {
-      color: rgba(26, 52, 120, .1)
-    }
 
     .svc-icon {
       font-size: 1.7rem;
@@ -1801,6 +1798,51 @@
       }
     }
 
+
+    .logo-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      line-height: 1;
+    }
+
+    .logo-main {
+      font-size: 1.8rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      margin-bottom: 2px;
+    }
+
+    .logo-main .blue-letter {
+      color: #1a3478;
+    }
+
+    .logo-main .black-letter {
+      color: #000000;
+    }
+
+    .logo-subtitle {
+      font-size: 0.7rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: #000000;
+      margin-bottom: 4px;
+    }
+
+    .logo-divider {
+      width: 100%;
+      height: 1px;
+      background-color: #000000;
+      margin: 4px 0;
+    }
+
+    .logo-tagline {
+      font-size: 0.55rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      color: #000000;
+    }
+
     @media(max-width:768px) {
       .nav-links {
         display: none
@@ -1923,9 +1965,13 @@
             fill="#1a3478">at</text>
         </svg>
       </div>
-      <div class="logo-words">
-        <span class="logo-name">Doc<span>Pat</span></span>
-        <span class="logo-sub">Healthcare Solutions</span>
+      <div class="logo-container">
+        <div class="logo-main">
+          <span class="blue-letter">D</span><span class="black-letter">OC</span><span class="blue-letter">PAT</span>
+        </div>
+        <div class="logo-subtitle">Healthcare Solutions Pvt Ltd.</div>
+        <div class="logo-divider"></div>
+        <div class="logo-tagline">Billing right, Doctors bright, Patients delighted</div>
       </div>
     </a>
     <div class="nav-links">
@@ -2290,51 +2336,80 @@
           domain.</p>
       </div>
       <div class="spec-grid reveal">
-        <div class="spec-card"><span class="spec-emoji">🫀</span>
+        <div class="spec-card">
+          <span class="spec-emoji">🫀</span>
           <div class="spec-name">Cardiology</div>
           <div class="spec-tag">ICD-10 · CPT · HCPCS</div>
         </div>
-        <div class="spec-card"><span class="spec-emoji">🦴</span>
+
+        <div class="spec-card">
+          <span class="spec-emoji">🦴</span>
+          <div class="spec-name">Chiropractic</div>
+          <div class="spec-tag">ICD-10 · CPT · HCPCS</div>
+        </div>
+
+        <div class="spec-card">
+          <span class="spec-emoji">🦿</span>
           <div class="spec-name">Orthopedics</div>
           <div class="spec-tag">Surgical & Non-Surgical</div>
         </div>
-        <div class="spec-card"><span class="spec-emoji">🧠</span>
+
+        <div class="spec-card">
+          <span class="spec-emoji">🧠</span>
           <div class="spec-name">Neurology</div>
           <div class="spec-tag">Complex Coding Certified</div>
         </div>
-        <div class="spec-card"><span class="spec-emoji">🏥</span>
+
+        <div class="spec-card">
+          <span class="spec-emoji">🩺</span>
           <div class="spec-name">Internal Medicine</div>
           <div class="spec-tag">E&M Coding Experts</div>
         </div>
-        <div class="spec-card"><span class="spec-emoji">👁️</span>
+
+        <div class="spec-card">
+          <span class="spec-emoji">👁️</span>
           <div class="spec-name">Ophthalmology</div>
           <div class="spec-tag">Surgical & Clinical</div>
         </div>
-        <div class="spec-card"><span class="spec-emoji">🩺</span>
+
+        <div class="spec-card">
+          <span class="spec-emoji">🧑‍⚕️</span>
           <div class="spec-name">Primary Care</div>
           <div class="spec-tag">High-Volume Billing</div>
         </div>
-        <div class="spec-card"><span class="spec-emoji">👶</span>
+
+        <div class="spec-card">
+          <span class="spec-emoji">👶</span>
           <div class="spec-name">Pediatrics</div>
           <div class="spec-tag">Well-Visit & Preventive</div>
         </div>
-        <div class="spec-card"><span class="spec-emoji">🧬</span>
+
+        <div class="spec-card">
+          <span class="spec-emoji">🧬</span>
           <div class="spec-name">Oncology</div>
           <div class="spec-tag">Chemo & Infusion Billing</div>
         </div>
-        <div class="spec-card"><span class="spec-emoji">🩻</span>
+
+        <div class="spec-card">
+          <span class="spec-emoji">🩻</span>
           <div class="spec-name">Radiology</div>
           <div class="spec-tag">Technical & Professional</div>
         </div>
-        <div class="spec-card"><span class="spec-emoji">🏃</span>
+
+        <div class="spec-card">
+          <span class="spec-emoji">🏃</span>
           <div class="spec-name">Physical Therapy</div>
           <div class="spec-tag">Outcomes-Based Coding</div>
         </div>
-        <div class="spec-card"><span class="spec-emoji">🔬</span>
+
+        <div class="spec-card">
+          <span class="spec-emoji">🔬</span>
           <div class="spec-name">Pathology / Lab</div>
           <div class="spec-tag">High-Accuracy Coding</div>
         </div>
-        <div class="spec-card"><span class="spec-emoji">🦷</span>
+
+        <div class="spec-card">
+          <span class="spec-emoji">🦷</span>
           <div class="spec-name">Oral Surgery</div>
           <div class="spec-tag">Dental-Medical Crossover</div>
         </div>
@@ -2401,8 +2476,8 @@
           <div class="testi-author">
             <div class="testi-av">DR</div>
             <div>
-              <div class="testi-name">Dr. Robert M.</div>
-              <div class="testi-role">Internal Medicine, Texas</div>
+              <div class="testi-name">Dr. Sandy</div>
+              <div class="testi-role">Chiropractor</div>
             </div>
           </div>
         </div>
@@ -2415,8 +2490,8 @@
           <div class="testi-author">
             <div class="testi-av">SC</div>
             <div>
-              <div class="testi-name">Dr. Sarah C.</div>
-              <div class="testi-role">Cardiology Group, Florida</div>
+              <div class="testi-name">Dr. McDonald</div>
+              <div class="testi-role">Chiropractor</div>
             </div>
           </div>
         </div>
@@ -2429,8 +2504,8 @@
           <div class="testi-author">
             <div class="testi-av">AK</div>
             <div>
-              <div class="testi-name">Dr. Anita K.</div>
-              <div class="testi-role">Multi-Specialty Clinic, Illinois</div>
+              <div class="testi-name">Dr. Soanes</div>
+              <div class="testi-role">Chiropractor</div>
             </div>
           </div>
         </div>
@@ -2500,6 +2575,7 @@
               <div class="fg"><label>Specialty</label><select id="sp">
                   <option value="">Select...</option>
                   <option>Cardiology</option>
+                  <option>Chiropractic</option>
                   <option>Internal Medicine</option>
                   <option>Orthopedics</option>
                   <option>Neurology</option>
@@ -2632,7 +2708,7 @@
       } catch {
         const s = encodeURIComponent(`New RCM Inquiry — ${fn} ${ln}`);
         const b = encodeURIComponent(`Name: ${fn} ${ln}\nEmail: ${em}\nPhone: ${ph}\nPractice: ${pt}\nSpecialty: ${sp}\nVolume: ${vol}\nEHR: ${ehr}\n\n${msg}`);
-        window.location.href = `mailto:danielpatilshalom@gmail.com?subject=${s}&body=${b}`;
+        window.location.href = `mailto:arundk04081011@gmail.com?subject=${s}&body=${b}`;
         ok.textContent = '✅ Your email client opened — please send the message to complete your inquiry.'; ok.style.display = 'block';
       }
       btn.querySelector('.fs-inner').textContent = 'Schedule My Free Consultation →'; btn.disabled = false;
