@@ -2555,58 +2555,70 @@
           </div>
         </div>
         <div class="reveal-right">
-          <div class="contact-form-wrap">
-            <div class="fmsg ok" id="msgOk">✅ Thank you! We'll reach out within 1 business day.</div>
-            <div class="fmsg err" id="msgErr">❌ Something went wrong. Please email us directly.</div>
-            <div class="form-grid">
-              <div class="fg"><label>First Name *</label><input type="text" id="fn" placeholder="John" required /></div>
-              <div class="fg"><label>Last Name *</label><input type="text" id="ln" placeholder="Smith" required /></div>
-              <div class="fg full"><label>Email Address *</label><input type="email" id="em"
-                  placeholder="doctor@yourpractice.com" required /></div>
-              <div class="fg"><label>Phone Number</label><input type="tel" id="ph" placeholder="+1 (555) 000-0000" />
+          <form id="contactForm" action="https://formsubmit.co/arunkumar4thaugust@gmail.com" method="POST">
+            <div class="contact-form-wrap">
+              <div class="fmsg ok" id="msgOk">✅ Thank you! We'll reach out within 1 business day.</div>
+              <div class="fmsg err" id="msgErr">❌ Something went wrong. Please email us directly.</div>
+              <div class="form-grid">
+                <div class="fg"><label>First Name *</label><input type="text" id="fn" name="First Name"
+                    placeholder="John" required />
+                </div>
+                <div class="fg"><label>Last Name *</label><input type="text" id="ln" name="Last Name"
+                    placeholder="Smith" required />
+                </div>
+                <div class="fg full"><label>Email Address *</label><input type="email" id="em" name="Email"
+                    placeholder="doctor@yourpractice.com" required /></div>
+                <div class="fg"><label>Phone Number *</label><input type="tel" id="ph" name="Phone"
+                    placeholder="+1 (555) 000-0000" required />
+                </div>
+                <div class="fg"><label>Practice Type *</label><select id="pt" name="Practice Type" required>
+                    <option value="">Select...</option>
+                    <option>Solo Physician</option>
+                    <option>Group Practice</option>
+                    <option>Hospital / Health System</option>
+                    <option>Urgent Care</option>
+                    <option>Specialty Clinic</option>
+                    <option>Other</option>
+                  </select></div>
+                <div class="fg"><label>Specialty *</label><select id="sp" name="Specialty" required>
+                    <option value="">Select...</option>
+                    <option>Cardiology</option>
+                    <option>Chiropractic</option>
+                    <option>Internal Medicine</option>
+                    <option>Orthopedics</option>
+                    <option>Neurology</option>
+                    <option>Pediatrics</option>
+                    <option>Oncology</option>
+                    <option>Radiology</option>
+                    <option>Primary Care</option>
+                    <option>Physical Therapy</option>
+                    <option>Ophthalmology</option>
+                    <option>Other</option>
+                  </select></div>
+                <div class="fg"><label>Monthly Claims Volume *</label><select id="vol" name="Volume" required>
+                    <option value="">Select...</option>
+                    <option>Under 100</option>
+                    <option>100–500</option>
+                    <option>500–1,000</option>
+                    <option>1,000–5,000</option>
+                    <option>5,000+</option>
+                  </select></div>
+                <input type="hidden" name="_subject" value="New RCM Inquiry">
+                <input type="hidden" name="_captcha" value="false">
+                <input type="hidden" name="_template" value="table">
+                <input type="text" name="_honey" style="display:none">
+                <div class="fg"><label>Current EHR / PM System *</label><input type="text" id="ehr" name="EHR"
+                    placeholder="Epic, Kareo, Athena..." /></div>
+                <div class="fg full"><label>Billing Challenges / Message</label><textarea id="msg" name="Message"
+                    placeholder="Tell us about your current billing challenges — denials, slow payments, AR issues, or switching from another company..."></textarea>
+                </div>
               </div>
-              <div class="fg"><label>Practice Type</label><select id="pt">
-                  <option value="">Select...</option>
-                  <option>Solo Physician</option>
-                  <option>Group Practice</option>
-                  <option>Hospital / Health System</option>
-                  <option>Urgent Care</option>
-                  <option>Specialty Clinic</option>
-                  <option>Other</option>
-                </select></div>
-              <div class="fg"><label>Specialty</label><select id="sp">
-                  <option value="">Select...</option>
-                  <option>Cardiology</option>
-                  <option>Chiropractic</option>
-                  <option>Internal Medicine</option>
-                  <option>Orthopedics</option>
-                  <option>Neurology</option>
-                  <option>Pediatrics</option>
-                  <option>Oncology</option>
-                  <option>Radiology</option>
-                  <option>Primary Care</option>
-                  <option>Physical Therapy</option>
-                  <option>Ophthalmology</option>
-                  <option>Other</option>
-                </select></div>
-              <div class="fg"><label>Monthly Claims Volume</label><select id="vol">
-                  <option value="">Select...</option>
-                  <option>Under 100</option>
-                  <option>100–500</option>
-                  <option>500–1,000</option>
-                  <option>1,000–5,000</option>
-                  <option>5,000+</option>
-                </select></div>
-              <div class="fg"><label>Current EHR / PM System</label><input type="text" id="ehr"
-                  placeholder="Epic, Kareo, Athena..." /></div>
-              <div class="fg full"><label>Billing Challenges / Message</label><textarea id="msg"
-                  placeholder="Tell us about your current billing challenges — denials, slow payments, AR issues, or switching from another company..."></textarea>
-              </div>
+              <button class="form-submit" type="submit">
+                <span class="fs-inner">Schedule My Free Consultation →</span>
+              </button>
+              <p class="form-note">🔒 HIPAA compliant · Your data is secure and never shared with third parties</p>
             </div>
-            <button class="form-submit" onclick="submitForm()"><span class="fs-inner">Schedule My Free Consultation
-                →</span></button>
-            <p class="form-note">🔒 HIPAA compliant · Your data is secure and never shared with third parties</p>
-          </div>
+          </form>
         </div>
       </div>
     </div>
@@ -2694,28 +2706,45 @@
     document.querySelectorAll('.count-up').forEach(el => cobs.observe(el));
 
     // FORM
-    async function submitForm() {
-      const btn = document.querySelector('.form-submit');
-      const ok = document.getElementById('msgOk'), er = document.getElementById('msgErr');
-      const fn = document.getElementById('fn').value.trim(), ln = document.getElementById('ln').value.trim(), em = document.getElementById('em').value.trim();
-      const ph = document.getElementById('ph').value.trim(), pt = document.getElementById('pt').value, sp = document.getElementById('sp').value;
-      const vol = document.getElementById('vol').value, ehr = document.getElementById('ehr').value.trim(), msg = document.getElementById('msg').value.trim();
-      if (!fn || !ln || !em) { er.textContent = '⚠️ Please fill in all required fields.'; er.style.display = 'block'; ok.style.display = 'none'; return }
-      btn.querySelector('.fs-inner').textContent = 'Sending...'; btn.disabled = true;
-      ok.style.display = 'none'; er.style.display = 'none';
-      try {
-        const r = await fetch('https://formspree.io/f/xpwzjbgp', { method: 'POST', headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }, body: JSON.stringify({ name: `${fn} ${ln}`, email: em, phone: ph, practiceType: pt, specialty: sp, volume: vol, ehr, message: msg, _replyto: em, _subject: `New RCM Inquiry — ${fn} ${ln}` }) });
-        if (r.ok) { ok.style.display = 'block';['fn', 'ln', 'em', 'ph', 'ehr', 'msg'].forEach(id => document.getElementById(id).value = '');['pt', 'sp', 'vol'].forEach(id => document.getElementById(id).selectedIndex = 0) }
-        else throw 0;
-      } catch {
-        const s = encodeURIComponent(`New RCM Inquiry — ${fn} ${ln}`);
-        const b = encodeURIComponent(`Name: ${fn} ${ln}\nEmail: ${em}\nPhone: ${ph}\nPractice: ${pt}\nSpecialty: ${sp}\nVolume: ${vol}\nEHR: ${ehr}\n\n${msg}`);
-        window.location.href = `mailto:admin@docpatrcm.com?subject=${s}&body=${b}`;
-        ok.textContent = '✅ Your email client opened — please send the message to complete your inquiry.'; ok.style.display = 'block';
-      }
-      btn.querySelector('.fs-inner').textContent = 'Schedule My Free Consultation →'; btn.disabled = false;
-    }
+    document.getElementById("contactForm").addEventListener("submit", async function (e) {
+      e.preventDefault();
 
+      const btn = document.querySelector('.form-submit');
+      const ok = document.getElementById('msgOk');
+      const er = document.getElementById('msgErr');
+
+      btn.querySelector('.fs-inner').textContent = 'Sending...';
+      btn.disabled = true;
+      ok.style.display = 'none';
+      er.style.display = 'none';
+
+      const formData = new FormData(this);
+
+      // Add reply-to email
+      formData.append("_replyto", document.getElementById("em").value);
+
+      try {
+        const res = await fetch("https://formsubmit.co/ajax/arunkumar4thaugust@gmail.com", {
+          method: "POST",
+          headers: {
+            "Accept": "application/json"
+          },
+          body: formData
+        });
+
+        if (res.status === 200) {
+          ok.style.display = 'block';
+          this.reset();
+        } else {
+          throw new Error();
+        }
+      } catch {
+        er.style.display = 'block';
+      }
+
+      btn.querySelector('.fs-inner').textContent = 'Schedule My Free Consultation →';
+      btn.disabled = false;
+    });
     // SMOOTH SCROLL
     document.querySelectorAll('a[href^="#"]').forEach(a => {
       a.addEventListener('click', e => { const t = document.querySelector(a.getAttribute('href')); if (t) { e.preventDefault(); t.scrollIntoView({ behavior: 'smooth', block: 'start' }) } });
